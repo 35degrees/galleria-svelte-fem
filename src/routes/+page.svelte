@@ -1,18 +1,25 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-	import { fade, slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import data from '../lib/data.json';
 	import MainGrid from '../components/MainGrid.svelte';
 	import Slide from '../components/Slide.svelte';
-	import { SlideState, SlideIndex } from '../state.svelte.js';
+	import { slideState } from '../stores.js';
+	import { onDestroy } from 'svelte';
 
-	let currState = new SlideState();
+	let slideStateValue;
+
+	const unsubscribe = slideState.subscribe((value) => {
+		slideStateValue = value;
+	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <Nav />
-{#if currState.slide}
+{#if !slideStateValue}
 	<MainGrid {data} />
 {/if}
-{#if !currState.slide}
+{#if slideStateValue}
 	<Slide {data} />
 {/if}

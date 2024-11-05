@@ -6,4 +6,5 @@
 
 body {
 	background-color: hsl(32, 37%, 95%);
+	overflow-x: hidden;
 }

@@ -1,43 +1,62 @@
 <script>
-	import { SlideState, SlideIndex } from '../state.svelte.js';
-	const updateSlideState = new SlideState();
-	$inspect(updateSlideState.slide);
+	import { SlideIndex } from '../state.svelte.js';
+	import { slideState } from '../stores.js';
+	import { fade, fly } from 'svelte/transition';
+	import { slideIndex } from '../stores.js';
 	const myIndex = new SlideIndex();
 	$inspect(myIndex.slideIndex);
 	let { data } = $props();
 
 	function handleClick(i) {
-		myIndex.slideIndex = i;
-		updateSlideState.toggle();
+		$slideIndex = i;
+		slideState.update((slide) => (slide = !slide));
 	}
 </script>
 
-<section id="main">
-	<div
-		class="container mx-auto flex items-start justify-center text-center lg:h-[950px] lg:max-h-[2000px]"
-	>
+<section
+	class="mr-2"
+	id="main"
+	in:fade={{ duration: 480, delay: 520 }}
+	out:fade={{ duration: 480 }}
+>
+	{#key slideState}
 		<div
-			class="grid-container grid-rows-auto sm:grid-rows-16 grid h-auto w-full gap-4 p-0 sm:p-4 md:grid-cols-2 md:grid-rows-12 lg:grid-cols-4 lg:grid-rows-11"
+			class="container mx-auto flex items-start justify-center text-center lg:h-[950px] lg:max-h-[2000px]"
 		>
-			{#each data as painting, i}
-				<div
-					onclick={() => handleClick(i)}
-					class="grid-item relative z-0 flex w-full cursor-pointer flex-col items-start justify-end rounded-md bg-cover bg-center px-4 py-4 pt-20 hover:opacity-70"
-					style="background-image: url({painting.images.thumbnail})"
-				>
-					<h3 class="z-9 font-main text-left text-xl font-semibold text-white drop-shadow-xl">
-						{painting.name}
-					</h3>
-					<h5 class="z-99 font-main mt-1 text-left text-sm font-normal text-white drop-shadow-sm">
-						{painting.artist.name}
-					</h5>
-				</div>
-			{/each}
+			<div
+				class="grid-container grid-rows-auto grid h-auto w-full gap-4 p-0 sm:grid-rows-16 sm:p-4 md:grid-cols-2 md:grid-rows-12 lg:grid-cols-4 lg:grid-rows-11"
+			>
+				{#each data as painting, i}
+					<div
+						onclick={() => handleClick(i)}
+						class="grid-item relative z-0 flex w-full cursor-pointer select-none flex-col items-start justify-end rounded-md bg-cover bg-center px-4 py-4 pt-20 hover:opacity-70"
+						style="background-image: url({painting.images.thumbnail})"
+					>
+						<h3 class="z-9 text-left font-main text-xl font-semibold text-white drop-shadow-xl">
+							{painting.name}
+						</h3>
+						<h5 class="z-99 mt-1 text-left font-main text-sm font-normal text-white drop-shadow-sm">
+							{painting.artist.name}
+						</h5>
+					</div>
+				{/each}
+			</div>
 		</div>
-	</div>
+	{/key}
 </section>
 
 <style>
+	.transition-container {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.transition-container > * {
+		grid-row: 1;
+		grid-column: 1;
+	}
+
 	.grid {
 		grid-template-rows: masonry;
 	}
