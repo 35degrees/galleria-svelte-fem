@@ -75,13 +75,13 @@
 	{/key}
 	<div class="arrows flex cursor-pointer select-none flex-row items-center justify-center gap-7">
 		<img
-			src="src/lib/assets/shared/icon-back-button.svg"
+			src="https://raw.githubusercontent.com/35degrees/galleria-svelte-fem/f3f009801c4981b221dafd8baba955cf3577cf2c/src/lib/assets/shared/icon-back-button.svg"
 			alt="left button"
 			class="arrow-left"
 			onclick={downIndex}
 		/>
 		<img
-			src="src/lib/assets/shared/icon-next-button.svg"
+			src="https://raw.githubusercontent.com/35degrees/galleria-svelte-fem/f3f009801c4981b221dafd8baba955cf3577cf2c/src/lib/assets/shared/icon-next-button.svg"
 			alt="right button"
 			class="arrow-right"
 			onclick={upIndex}

@@ -59,16 +59,16 @@
 		"description": "Penitent Magdalene is a painting by the Italian artist Artemisia Gentileschi. It hangs in Seville Cathedral. It has probably been in the cathedral since the late 17th century. The painting's first home was the collection of Fernando Enriquez Afan de Ribera, from 1626 to 1637. She returned to the subject later in the 1620s in Mary Magdalene as Melancholy.",
 		"source": "https://en.wikipedia.org/wiki/Penitent_Magdalene_(Artemisia_Gentileschi)",
 		"artist": {
-			"image": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/guernica/artist.jpg?raw=trueg",
+			"image": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/penitent-magdalene/artist.jpg?raw=true",
 			"name": "Artemisia Gentileschi"
 		},
 		"images": {
-			"thumbnail": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/guernica/thumbnail.jpg?raw=trueg",
+			"thumbnail": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/penitent-magdalene/thumbnail.jpg?raw=true",
 			"hero": {
-				"small": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/guernica/hero-small.jpg?raw=true",
-				"large": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/guernica/hero-large.jpg?raw=true"
+				"small": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/penitent-magdalene/hero-small.jpg?raw=true",
+				"large": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/penitent-magdalene/hero-large.jpg?raw=true"
 			},
-			"gallery": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/guernica/gallery.jpg?raw=true"
+			"gallery": "https://github.com/35degrees/galleria-svelte-fem/blob/main/src/lib/assets/penitent-magdalene/gallery.jpg?raw=true"
 		}
 	},
 	{

@@ -56,7 +56,7 @@
 						md:top-[520px] md:items-end lg:top-[540px]"
 						>
 							<img
-								src="src/lib/assets/shared/icon-view-image.svg"
+								src="https://raw.githubusercontent.com/35degrees/galleria-svelte-fem/f3f009801c4981b221dafd8baba955cf3577cf2c/src/lib/assets/shared/icon-view-image.svg"
 								alt=""
 								class="md:mb-1 md:h-[20px]"
 							/>
